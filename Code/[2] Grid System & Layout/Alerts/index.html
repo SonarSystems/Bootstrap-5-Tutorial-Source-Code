@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <strong id="ShowAlert">Show Alert</strong>
+                </div>
+                
+                <div class="col-12">
+                    <strong id="HideAlert">Hide Alert</strong>
+                </div>
+                
+                <div class="col-12">
+                    <div class="alert alert-primary" role="alert" id="FirstAlert">
+                        Primary alert — need attention!
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Heading</h4>
+                        
+                        <p>Main body, this is some awesome intellectual content.</p>
+                        
+                        <hr>
+                        
+                        <p class="mb-0">Extra information</p>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="LastAlert">
+                        <strong>ERROR ERROR ERROR!</strong> Please deal with all errors immediately.
+
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Optional JavaScript -->
+        <!-- Popper.js first, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        
+        <script>            
+            var firstAlert = document.getElementById( 'FirstAlert' );
+            var lastAlert = document.getElementById( 'LastAlert' );
+            var showTrigger = document.getElementById( 'ShowAlert' );
+            var hideTrigger = document.getElementById( 'HideAlert' );
+            
+            showTrigger.onclick = function( )
+            {
+                firstAlert.style.display = "block";
+                alert.close();
+            };
+            
+            hideTrigger.onclick = function( )
+            {
+                firstAlert.style.display = "none";
+            };
+            
+            lastAlert.addEventListener( 'closed.bs.alert', function ( )
+            {
+                console.log( "CLOSING CLOSING CLOSING!!!" );
+            } );
+        </script>
+    </body>
+</html>
